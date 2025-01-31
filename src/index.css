@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply antialiased text-gray-900;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Smooth transitions */
+.transition-all {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Sticky navbar styles */
+.navbar-sticky {
+  @apply fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md;
+  animation: slideDown 0.5s ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Enhanced button styles */
+.btn-primary {
+  @apply inline-flex items-center px-8 py-4 text-lg font-semibold text-white bg-aqua-600 rounded-lg 
+         hover:bg-aqua-700 transform hover:scale-105 transition-all duration-300 shadow-lg;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center px-8 py-4 text-lg font-semibold text-aqua-900 bg-white rounded-lg 
+         border-2 border-aqua-600 hover:bg-aqua-50 transform hover:scale-105 transition-all duration-300 shadow-md;
+}
+
+/* Section spacing */
+.section-spacing {
+  @apply py-24 md:py-32;
+}
+
+/* Enhanced card styles */
+.feature-card {
+  @apply bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 
+         transform hover:-translate-y-1 border border-gray-100;
+}
+
+/* Testimonial card styles */
+.testimonial-card {
+  @apply bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300;
+}
+
+/* Fade-in animation */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
